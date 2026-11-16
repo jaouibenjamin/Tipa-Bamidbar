@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="img/station.jpg">
 <title>טיפה במדבר</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=IBM+Plex+Sans+Hebrew:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
 /* Layout: a film frame leads every screen (scene still or clip with a lower-third title); a slim instrument bar on top; puzzle and lock sit side by side under the frame. */
 :root{
@@ -16,8 +16,9 @@
   --ink:#090e12; --panel:#10181e; --panel2:#17232b; --hair:#26353e; --edge:#62808f;
   --text:#eaf0f0; --dim:#a3b4ba; --amber:#e8a548; --amber-ink:#1a1206; --teal:#74d3de;
   --bad:#ff9f8c; --ok:#a4e6ab;
-  --sans:"Heebo",Arial,Helvetica,sans-serif;
-  --mono:"IBM Plex Mono","Heebo",Arial,monospace;
+  --sans:"IBM Plex Sans Hebrew",Arial,Helvetica,sans-serif;
+  --display:"Karantina","IBM Plex Sans Hebrew",Arial,sans-serif;
+  --mono:"IBM Plex Mono","IBM Plex Sans Hebrew",Arial,monospace;
 }
 *{box-sizing:border-box}
 html{font-size:100%;background:#090e12}
@@ -26,8 +27,8 @@ body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);fo
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 4rem}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
 h1,h2,h3{font-family:var(--sans);margin:0;text-wrap:balance;line-height:1.12}
-h1{font-size:clamp(2.6rem,9vw,5.2rem);font-weight:800;letter-spacing:-.02em}
-h2{font-size:clamp(1.6rem,4.6vw,2.6rem);font-weight:800;letter-spacing:-.01em}
+h1{font-family:var(--display);font-size:clamp(4.4rem,16vw,9.5rem);font-weight:700;letter-spacing:.01em;line-height:.88}
+h2{font-family:var(--display);font-size:clamp(2.8rem,8vw,4.6rem);font-weight:700;letter-spacing:.01em;line-height:.95}
 h3{font-size:1.15rem;font-weight:700}
 p{margin:0}
 :focus-visible{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px var(--ink)}
@@ -40,7 +41,8 @@ button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;-webk
 body{opacity:0;transition:opacity .4s ease}body.ready{opacity:1}
 .wrap{max-width:70rem;margin:0 auto}
 #app>section{display:flex;flex-direction:column;gap:1.5rem}
-.label{font-family:var(--sans);font-size:.9rem;font-weight:700;letter-spacing:.03em;color:var(--teal)}
+.label{font-family:var(--sans);font-size:.9rem;font-weight:600;letter-spacing:.03em;line-height:1.4;color:var(--teal)}
+.label::before{content:"";display:inline-block;width:.5em;height:.5em;background:currentColor;margin-inline-end:.5em;vertical-align:.08em}
 .dim{color:var(--dim)}
 
 /* instrument bar */
@@ -164,7 +166,7 @@ select{font:inherit;min-height:48px;border-radius:4px;border:1px solid var(--edg
 .chapter{position:fixed;inset:0;z-index:15;background:#000;display:grid;place-items:end start;padding:clamp(24px,7vw,96px);pointer-events:none;overflow:hidden;animation:chapter 2.4s ease forwards}
 .chapter i{position:absolute;inset:0;background-size:cover;background-position:center;animation:push 2.6s ease-out forwards}
 .chapter::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,7,9,.25),rgba(4,7,9,.1) 40%,rgba(4,7,9,.88))}
-.chapter h2{font-size:clamp(2.4rem,8vw,5.5rem);text-shadow:0 4px 30px rgba(0,0,0,.8)}
+.chapter h2{font-size:clamp(4.4rem,15vw,10rem);text-shadow:0 4px 30px rgba(0,0,0,.8)}
 .chapter .label{color:#fff;font-size:1rem}
 @keyframes push{0%{transform:scale(1.14)}100%{transform:scale(1)}}
 .chapter div{position:relative;z-index:1;display:flex;flex-direction:column;gap:.8rem}
@@ -191,7 +193,7 @@ html.big .thumb{grid-area:th}html.big .steps .badge{grid-area:bd}html.big .steps
   .room.solving .world{filter:blur(8px) brightness(.38);transform:translate(-50%,-50%) scale(1.07)}
   .room.solving .hot,.room.solving .hud,.room.solving .notebox,.room.solving .pausebtn{display:none}
   .room .hud{position:absolute;z-index:2;inset:auto 0 0 0;padding:1.5rem max(24px,calc(50vw - 35rem)) 2rem;gap:.55rem;text-shadow:0 2px 16px rgba(0,0,0,.8);pointer-events:none}
-  .room .hud h2{font-size:clamp(2rem,4.4vw,3.4rem)}
+  .room .hud h2{font-size:clamp(3.2rem,6.6vw,5.6rem)}
   .room .hud .label{color:#fff;background:rgba(9,14,18,.66);padding:.2rem .6rem;border-radius:3px;align-self:flex-start;text-shadow:none}
   .room .hud .row .label{align-self:center}
   .room .hud .lead{max-width:42rem}
@@ -236,7 +238,7 @@ html.big .thumb{grid-area:th}html.big .steps .badge{grid-area:bd}html.big .steps
   .room.done .hud{display:none}
   .room .win{place-items:end start;padding:2.5rem max(24px,calc(50vw - 35rem));background:linear-gradient(to top,rgba(9,14,18,.94),rgba(9,14,18,.55) 40%,rgba(9,14,18,0) 70%)}
   .room .win .panel{background:none;border:0;backdrop-filter:none;text-align:start;align-items:flex-start;padding:0;max-width:46rem;box-shadow:none;animation:none}
-  .room .win h3{font-size:clamp(2rem,4vw,3.2rem);font-weight:800}
+  .room .win h3{font-family:var(--display);font-size:clamp(3.4rem,6.5vw,5.6rem);font-weight:700;line-height:.95}
   .room .win .panel>p{font-size:1.15rem;text-shadow:0 2px 12px #000}
   .room .hot span{width:40px;height:40px;font-size:1rem}
   .room .hot{width:52px;height:52px}
@@ -245,6 +247,22 @@ html.big .thumb{grid-area:th}html.big .steps .badge{grid-area:bd}html.big .steps
 .tile.empty{background:rgba(9,14,18,.5);box-shadow:none}
 .tline{background:var(--hair)}
 @keyframes rise{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:none}}
+/* atmosphere and instrument details */
+body::after{content:"";position:fixed;inset:0;z-index:30;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+.fig,.face{position:relative}
+.fig::before,.face::before{content:"";position:absolute;inset:7px;z-index:1;pointer-events:none;
+  background:linear-gradient(var(--amber),var(--amber)) top left/16px 2px no-repeat,linear-gradient(var(--amber),var(--amber)) top left/2px 16px no-repeat,
+  linear-gradient(var(--amber),var(--amber)) top right/16px 2px no-repeat,linear-gradient(var(--amber),var(--amber)) top right/2px 16px no-repeat,
+  linear-gradient(var(--amber),var(--amber)) bottom left/16px 2px no-repeat,linear-gradient(var(--amber),var(--amber)) bottom left/2px 16px no-repeat,
+  linear-gradient(var(--amber),var(--amber)) bottom right/16px 2px no-repeat,linear-gradient(var(--amber),var(--amber)) bottom right/2px 16px no-repeat;opacity:.85}
+.wh,.spz,.part{z-index:2}
+.lamps{display:inline-flex;gap:.4rem;align-items:center}
+.lamps i{width:.75rem;height:.75rem;border-radius:50%;border:1.5px solid var(--edge);background:transparent}
+.lamps i.on{background:var(--amber);border-color:var(--amber);box-shadow:0 0 10px var(--amber)}
+.roll{animation:roll .2s ease-out;transform-box:fill-box}
+@keyframes roll{from{transform:translateY(-12px);opacity:0}to{transform:none;opacity:1}}
+.tile,.key.letter{font-family:var(--display);font-weight:700;font-size:1.7rem;line-height:1}
+.btn{font-weight:600}
 html{overflow-x:clip}
 .cover{width:100vw;margin-inline-start:calc(50% - 50vw)}
 .cover .stage{border-radius:0;border:0;aspect-ratio:auto;height:max(27rem,min(76vh,56.25vw))}
@@ -321,7 +339,7 @@ const GAME = {
   key:'tipa-bamidbar-v2',
   title:'טיפה במדבר',
   minutes:40,
-  music:{explore:'audio/explore.mp3',lab:'audio/lab.mp3',finale:'audio/finale.mp3'}, musicVolume:.4,
+  music:{explore:'audio/explore.mp3',lab:'audio/lab.mp3',finale:'audio/finale.mp3'}, musicVolume:1,
   opening:{
     sub:'חדר בריחה מדעי על ביומימיקרי: איך צמחים ובעלי חיים אוספים מים במדבר, ומה מהנדסים למדו מהם.',
     info:[['הנושא','ביומימיקרי: קציר מים בהשראת יצורי המדבר'],['קהל היעד','תלמידות ותלמידים בכיתות ה׳ ו־ו׳'],['משך המשימה','40 דקות'],['כמה משתתפים','קבוצות של 2 עד 4']],
@@ -435,7 +453,11 @@ const $=s=>document.querySelector(s);
 
 /* ---- sound: WebAudio cues and the soundtrack, both started only after a tap ---- */
 let AC=null;
-function audio(){if(!S.sound)return null;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC;}catch(e){return null;}}
+function audio(){if(!S.sound)return null;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state!=='running'){const r=AC.resume();if(r&&r.catch)r.catch(()=>{});}return AC;}catch(e){return null;}}
+/* iPhones ignore volume set from a page, so tracks are switched by play and pause there; and the silent switch should not mute a game. */
+const VOL_OK=(()=>{try{const a=new Audio();a.volume=.5;return a.volume===.5;}catch(e){return false;}})();
+try{if(navigator.audioSession)navigator.audioSession.type='playback';}catch(e){}
+['touchend','click'].forEach(ev=>document.addEventListener(ev,()=>{if(S&&S.sound&&AC&&AC.state!=='running'){const r=AC.resume();if(r&&r.catch)r.catch(()=>{});}},true));
 function tone(f,d,type,when,vol){const a=audio();if(!a)return;const o=a.createOscillator(),g=a.createGain(),t=a.currentTime+(when||0);o.type=type||'sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol||.08,t+.015);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+d+.05);}
 function thud(when,vol){const a=audio();if(!a)return;const n=Math.floor(a.sampleRate*.25),b=a.createBuffer(1,n,a.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3);
   const s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain(),t=a.currentTime+(when||0);s.buffer=b;f.type='lowpass';f.frequency.value=260;g.gain.value=vol||.4;s.connect(f);f.connect(g);g.connect(a.destination);s.start(t);}
@@ -446,11 +468,13 @@ const TRACKS={};let cur=null,fadeT=null,voiceQ=[],voiceEl=null,duck=false;
 function stopVoice(){if(voiceEl){voiceEl.onended=null;voiceEl.pause();voiceEl=null;}voiceQ=[];duck=false;fade();}
 function playVoice(list){stopVoice();voiceQ=list.slice();duck=true;fade();const next=()=>{const src=voiceQ.shift();if(!src){voiceEl=null;duck=false;fade();if(S.screen==='story')render();return;}voiceEl=new Audio(src);voiceEl.onended=next;voiceEl.onerror=next;const p=voiceEl.play();if(p&&p.catch)p.catch(()=>{});};next();}
 function music(name){const src=GAME.music&&GAME.music[name];if(!src)return;
-  if(!TRACKS[name]){const a=new Audio(src);a.loop=name!=='finale';a.preload='auto';a.volume=0;TRACKS[name]=a;}
+  if(!TRACKS[name]){const a=new Audio(src);a.loop=name!=='finale';a.preload='auto';if(VOL_OK)a.volume=0;TRACKS[name]=a;}
   const a=TRACKS[name];if(cur!==name&&name==='finale'){try{a.currentTime=0;}catch(e){}}cur=name;
   if(S.sound&&a.paused&&!(name==='finale'&&a.ended)){const p=a.play();if(p&&p.catch)p.catch(()=>{});}fade();}
-function fade(){clearInterval(fadeT);fadeT=setInterval(()=>{let busy=false;for(const k in TRACKS){const a=TRACKS[k],target=(k===cur&&S.sound)?(GAME.musicVolume||.4)*(duck?.3:1):0,d=target-a.volume;
-  if(Math.abs(d)>.025){a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(d)*.025));busy=true;}else{a.volume=target;if(!target&&!a.paused)a.pause();}}if(!busy)clearInterval(fadeT);},70);}
+function fade(){clearInterval(fadeT);
+  if(!VOL_OK){for(const k in TRACKS){const a=TRACKS[k];if(!(k===cur&&S.sound)&&!a.paused)a.pause();}return;}
+  fadeT=setInterval(()=>{let busy=false;for(const k in TRACKS){const a=TRACKS[k],target=(k===cur&&S.sound)?(GAME.musicVolume||1)*(duck?.35:1):0,d=target-a.volume;
+  if(Math.abs(d)>.05){a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(d)*.05));busy=true;}else{a.volume=target;if(!target&&!a.paused)a.pause();}}if(!busy)clearInterval(fadeT);},70);}
 function syncMusic(){const m=S.screen==='end'?'finale':S.screen==='room'&&S.room===GAME.rooms.length-1?'lab':S.screen==='open'?null:'explore';if(m)music(m);else{cur=null;fade();}}
 function chapter(i){const r=GAME.rooms[i],fx=$('#fx'),w=document.querySelector('.wrap');if(!fx||noMotion())return;fx.innerHTML=`<div class="chapter" aria-hidden="true"><i style="background-image:url('${esc(r.img||'')}');background-position:${esc(r.focus||'center')}"></i><div><p class="label">חדר ${i+1} מתוך ${GAME.rooms.length} · ${esc(r.place)}</p><h2>${esc(r.title.replace(/^חדר \d+:\s*/,''))}</h2></div></div>`;
   w.inert=true;const done=()=>{if(fx.innerHTML){fx.innerHTML='';w.inert=!!$('#modal').innerHTML;const t=$('#top');if(t)t.focus({preventScroll:true});}};fx.firstChild.addEventListener('animationend',e=>{if(e.target===fx.firstChild)done();});setTimeout(done,2700);}
@@ -568,7 +592,7 @@ function figSpines(){
 function spineZones(){return SPN.map((sn,k)=>{const v=VEC[sn.tip];return [[sn.tip,118,'החוד'],[OPP[sn.tip],16,'הבסיס']].map(([d,t,w])=>`<button class="spz ${S.arrows[k]===d?'on':''}" style="left:${(sn.b[0]+v[0]*t+30)/3.8}%;top:${(sn.b[1]+v[1]*t)/3.2}%" data-act="sp" data-arg="${k},${d}" data-fid="z${k}${d}" aria-pressed="${S.arrows[k]===d}" aria-label="קוץ ${k+1}: הטיפה נעה ${ARROWS[d][0]}, אל ${w}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l7 8h-4.5v8h-5v-8H5z" transform="rotate(${ARROWS[d][1]} 12 12)"/></svg></button>`).join('');}).join('');}
 function figBlueprint(){let grid='',mesh='';for(let i=1;i<16;i++)grid+=`<path d="M${i*20} 0v240M0 ${i*20}h320" stroke="#12222c" stroke-width="1"/>`;
   for(let i=0;i<=16;i++)mesh+=`<path d="M${78+i*9} 48v100" stroke="#74d3de" stroke-width=".7"/>`;for(let i=0;i<=10;i++)mesh+=`<path d="M78 ${48+i*10}h144" stroke="#74d3de" stroke-width=".7"/>`;
-  const tag=(ch,x,y)=>`<circle cx="${x}" cy="${y}" r="13" fill="#e8a548"/><text x="${x}" y="${y+6}" font-size="17" font-family="Heebo,Arial,sans-serif" font-weight="800" text-anchor="middle" fill="#1a1206">${ch}</text>`;
+  const tag=(ch,x,y)=>`<circle cx="${x}" cy="${y}" r="13" fill="#e8a548"/><text x="${x}" y="${y+6}" font-size="17" font-family="IBM Plex Sans Hebrew,Arial,sans-serif" font-weight="800" text-anchor="middle" fill="#1a1206">${ch}</text>`;
   return `<svg viewBox="0 0 320 240" role="img" aria-label="שרטוט של קולט ערפל עם ארבעה חלקים מסומנים. א: רשת גדולה מתוחה בין שני עמודים מול הרוח. ב: תקריב של הסיבים ברשת, בצורת חרוט ועליהם טיפות. ג: מרזב מתחת לרשת וצינור שיורד אל מיכל. ד: מנוע חשמלי בצד, מחובר בקו מקווקו.">
   <rect width="320" height="240" fill="#081218"/>${grid}
   <g stroke="#eaf0f0" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"><path d="M8 70h40m-8-6l8 6l-8 6M8 100h40m-8-6l8 6l-8 6M8 130h40m-8-6l8 6l-8 6"/></g>
@@ -583,13 +607,13 @@ function lockFace(type){const ent={digits:S.digits,colors:S.colors,arrows:S.arro
   const socket=(x,y,on)=>`<circle cx="${x}" cy="${y+2}" r="27" fill="#000" opacity=".55" filter="url(#soft)"/><circle cx="${x}" cy="${y}" r="25" fill="url(#hole)" stroke="url(#brass)" stroke-width="${on?3:2}" ${on?'':'opacity=".85"'}/><path d="M${x-21} ${y-12}a24 24 0 0 1 42 0" stroke="#000" stroke-width="3" fill="none" opacity=".6"/>`;
   if(type==='digits'){bg='plate-steel.jpg';label='לוח המנעול: שלושה חלונות ספרות. '+[0,1,2].map(k=>`פתח ${k+1}: ${ent[k]}`).join(', ');
     inner=[266.7,160,53.3].map((x,k)=>`<rect x="${x-11}" y="5" width="22" height="20" rx="2" fill="url(#brass)" stroke="#3a2608"/><text x="${x}" y="20" font-size="14" ${MONO} fill="#1a1206">${k+1}</text>
-      <rect x="${x-33}" y="82" width="66" height="72" rx="6" fill="url(#brass)"/><rect x="${x-29}" y="86" width="58" height="64" rx="4" fill="url(#well)"/><path d="M${x-29} 88h58" stroke="#000" stroke-width="4" opacity=".7"/>${glowTx(x,134,ent[k],44,MONO)}`).join('');}
+      <rect x="${x-33}" y="82" width="66" height="72" rx="6" fill="url(#brass)"/><rect x="${x-29}" y="86" width="58" height="64" rx="4" fill="url(#well)"/><path d="M${x-29} 88h58" stroke="#000" stroke-width="4" opacity=".7"/><g class="roll" data-fid="dg${k}v${ent[k]}">${glowTx(x,134,ent[k],44,MONO)}</g>`).join('');}
   if(type==='colors'){bg='shell.jpg';const ST=GAME.rooms[1].puzzle.steps,by=c=>ST.find(x=>x.c===c)||{};label='לוח המנעול: ארבעה שקעים על גב החיפושית. '+(ent.length?'בחרתם: '+ent.map(c=>by(c).n||COLORS[c][0]).join(', '):'עדיין לא בחרתם תמונות');
     inner=X4.map((x,k)=>`${socket(x,90,ent[k])}${ent[k]&&by(ent[k]).img?`<clipPath id="cp${k}"><circle cx="${x}" cy="90" r="22"/></clipPath><image href="${esc(by(ent[k]).img)}" x="${x-33}" y="68" width="66" height="44" preserveAspectRatio="xMidYMid slice" clip-path="url(#cp${k})"/>`:(ent[k]?shapeAt(ent[k],x,90,30):'')}<rect x="${x-11}" y="124" width="22" height="18" rx="2" fill="url(#brass)" stroke="#3a2608"/><text x="${x}" y="138" font-size="12" ${MONO} fill="#1a1206">${k+1}</text>`).join('');}
   if(type==='arrows'){bg='pad.jpg';label='לוח המנעול: ארבעה שקעים, אחד לכל קוץ. '+(ent.some(Boolean)?'בחרתם: '+ent.map((a,k)=>a?`קוץ ${k+1} ${ARROWS[a][0]}`:'').filter(Boolean).join(', '):'עדיין לא בחרתם כיוונים');
     inner=X4.map((x,k)=>`${socket(x,90,ent[k])}${ent[k]?`<g filter="url(#glow)" opacity=".7">${arrowAt(ent[k],x,90,30)}</g>${arrowAt(ent[k],x,90,30)}`:''}<rect x="${x-11}" y="124" width="22" height="18" rx="2" fill="url(#brass)" stroke="#3a2608"/><text x="${x}" y="138" font-size="12" ${MONO} fill="#1a1206">${k+1}</text>`).join('');}
   if(type==='word'){bg='vault.jpg';label='לוח המנעול על דלת הפלדה: ארבעה חלונות אותיות. '+(ent.length?'המילה שבניתם: '+ent.join(''):'עדיין ריקים');
-    inner=X4.map((x,k)=>`<rect x="${x-29}" y="52" width="58" height="76" rx="6" fill="url(#brass)"/><rect x="${x-25}" y="56" width="50" height="68" rx="4" fill="url(#well)"/><path d="M${x-25} 58h50" stroke="#000" stroke-width="4" opacity=".7"/>${ent[k]?glowTx(x,104,ent[k],38,'font-family="Heebo,Arial,sans-serif" font-weight="800" text-anchor="middle"'):''}`).join('');}
+    inner=X4.map((x,k)=>`<rect x="${x-29}" y="52" width="58" height="76" rx="6" fill="url(#brass)"/><rect x="${x-25}" y="56" width="50" height="68" rx="4" fill="url(#well)"/><path d="M${x-25} 58h50" stroke="#000" stroke-width="4" opacity=".7"/>${ent[k]?`<g class="roll" data-fid="wl${k}${ent[k]}">${glowTx(x,104,ent[k],38,'font-family="IBM Plex Sans Hebrew,Arial,sans-serif" font-weight="700" text-anchor="middle"')}</g>`:''}`).join('');}
   const chev=d=>`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d>0?'M5 15l7-8l7 8':'M5 9l7 8l7-8'}" fill="none" stroke="#1a1206" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   const H=type==='digits'?236:180;
   const over=type==='digits'?[266.7,160,53.3].map((x,k)=>`<button class="wh" style="left:${x/3.2}%;top:${52/2.36}%" data-act="dig" data-arg="${k},1" data-fid="du${k}" aria-label="פתח ${k+1}: העלו את הספרה. עכשיו ${ent[k]}">${chev(1)}</button><button class="wh" style="left:${x/3.2}%;top:${186/2.36}%" data-act="dig" data-arg="${k},-1" data-fid="dd${k}" aria-label="פתח ${k+1}: הורידו את הספרה. עכשיו ${ent[k]}">${chev(-1)}</button>`).join(''):'';
@@ -650,7 +674,7 @@ function vRoom(){const fresh7=wonAt&&Date.now()-wonAt<7000,fresh1=wonAt&&Date.no
   const pb=o.video&&!still?`<button class="ib pausebtn" data-act="motion" data-fid="motion" aria-pressed="${!!S.still}" aria-label="עצירת התנועה בתמונה" title="עצירת התנועה בתמונה">${S.still?ICON.play:ICON.pause}</button>`:'';
   return `<section class="room ${solving?'solving':''} ${done?'done':''}">
   <div class="scenebox"><div class="world">${pic(o,()=>r.scene==='lab'?SCENES.lab(r.alt,done):SCENES[r.scene](r.alt))}${spots}</div>${pb}</div>
-  <div class="hud"><p class="label">חדר ${i+1} מתוך ${n} · ${esc(r.place)}</p><h2 tabindex="-1" id="top">${esc(r.title)}</h2><p class="lead">${esc(r.intro)}</p>
+  <div class="hud"><p class="label">חדר ${i+1} מתוך ${n} · ${esc(r.place)}</p><h2 tabindex="-1" id="top">${esc(r.title.replace(/^חדר \d+:\s*/,''))}</h2><p class="lead">${esc(r.intro)}</p>
     <div class="row"><span class="label">אותיות שנאספו</span>${tiles()}</div>
     ${left()<=0&&!S.endAt?`<p class="late">הזמן שהוקצב נגמר, אבל הכפר עדיין מחכה לתכנון. המשיכו לפתור.</p>`:''}
     ${done?'':`<div class="row"><button class="btn tobench" data-act="solve" data-fid="solve">אל החידה והמנעול</button><span class="dim tip">לחצו על הנקודות הממוספרות בתמונה כדי לפתוח את יומן השדה.</span></div>`}</div>
@@ -659,7 +683,7 @@ function vRoom(){const fresh7=wonAt&&Date.now()-wonAt<7000,fresh1=wonAt&&Date.no
     <div class="row"><button class="btn" data-act="next" data-fid="next">${i<n-1?'לחדר הבא':'צאו מהמעבדה'}</button></div></section></div>`
   :`<div class="bench"><div class="benchbar"><button class="btn ghost small" data-act="explore" data-fid="explore">חזרה לסצנה</button></div>
   <div class="cols"><div class="stack">${vPuzzle(r)}</div><div class="stack">${vLock(r,i)}
-  <section class="panel hintp" aria-labelledby="hn"><div class="row"><h3 id="hn" class="label" style="margin-inline-end:auto">רמזים</h3><span class="dim">${h} מתוך ${r.hints.length}</span>
+  <section class="panel hintp" aria-labelledby="hn"><div class="row"><h3 id="hn" class="label" style="margin-inline-end:auto">רמזים</h3><span class="lamps" role="img" aria-label="${h} מתוך ${r.hints.length} רמזים נפתחו">${r.hints.map((_,k)=>`<i class="${k<h?'on':''}"></i>`).join('')}</span>
   ${h<r.hints.length?`<button class="btn ghost small" data-act="hint" data-fid="hint">${h?'רמז נוסף':'בקשו רמז'}</button>`:''}</div>
   ${h?`<ol class="hints" aria-live="polite">${r.hints.slice(0,h).map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`:''}</section></div></div></div>`}
   </section>`;}
@@ -725,7 +749,7 @@ const ACT={
   try(){if(S.screen==='room'&&!S.solved[S.room])checkLock();},
   hint(){const r=GAME.rooms[S.room];if(S.screen==='room'&&!S.solved[S.room]&&S.hints[S.room]<r.hints.length){S.hints[S.room]++;sfx.drop();render();}},
   next(){if(S.screen!=='room'||!S.solved[S.room])return;S.view='explore';S.open=null;S.fb=null;let ch=-1;if(S.room<GAME.rooms.length-1){S.room++;ch=S.room;sfx.click();}else{S.screen='end';sfx.end();}render(true);if(ch>=0)chapter(ch);},
-  askreset(){opener=document.activeElement&&document.activeElement.dataset?document.activeElement.dataset.act:null;modal(`<h2 id="mh" style="font-size:1.4rem">להתחיל מחדש?</h2><p>ההתקדמות, האותיות והשעון יימחקו.</p><div class="row"><button class="btn ghost" data-act="closemodal">ביטול</button><button class="btn" data-act="reset">כן, מההתחלה</button></div>`);},
+  askreset(){opener=document.activeElement&&document.activeElement.dataset?document.activeElement.dataset.act:null;modal(`<h2 id="mh" style="font-size:2.4rem">להתחיל מחדש?</h2><p>ההתקדמות, האותיות והשעון יימחקו.</p><div class="row"><button class="btn ghost" data-act="closemodal">ביטול</button><button class="btn" data-act="reset">כן, מההתחלה</button></div>`);},
   closemodal(){modal('');const b=document.querySelector('#app [data-act="askreset"]')||document.querySelector('[data-fid="reset"]');if(b)b.focus();},
   motion(){S.still=!S.still;render();},
   reset(){const keep={sound:S.sound,big:S.big,still:S.still};S=Object.assign(fresh(),keep);stopVoice();modal('');render(true);}
